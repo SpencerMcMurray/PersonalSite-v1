@@ -1,7 +1,14 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const path = require('path');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+// Require routes
+const indexRoute = require('./routes/index.js');
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+const app = express();
+const port = 3000;
+
+app.set('views', path.join(__dirname, 'views'))
+
+app.use('/', indexRoute);
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
