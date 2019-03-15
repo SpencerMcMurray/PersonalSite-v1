@@ -1,2 +1,6 @@
-# Personal-Website
-A website detailing my skills and projects, written with Node.js and React
+# Personal Website
+
+My personal website built with Node and React
+
+## Key Features
+* Auto updating GitHub Repo display
