@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import logo from '../images/logo.svg';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import '../styles/Main.css';
 
-class App extends Component {
+class Navigation extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Express Website</h1>
-          <Button variant="primary">Primary</Button>
-        </header>
-      </div>
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+        <Navbar.Brand href="#home" className="display-4">Spencer McMurray</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#home">About</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
 
-export default App;
+export default Navigation;
