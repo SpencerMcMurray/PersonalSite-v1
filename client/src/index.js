@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css';
-import './styles/index.css';
-import Navigation from './components/Main.js';
+import React from "react";
+import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import "./styles/index.css";
+import App from "./App";
 
-ReactDOM.render(<Navigation />, document.getElementById('header'));
+ReactDOM.render(<App />, document.getElementById("header"));
