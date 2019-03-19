@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import Navigation from "./components/navigation";
+import Navigation from "./components/Navigation";
+import About from "./components/About";
 
 class App extends Component {
   render() {
-    return <Navigation />;
+    return (
+      <React.Fragment>
+        <Navigation />
+        <About />
+      </React.Fragment>
+    );
   }
 }
 
