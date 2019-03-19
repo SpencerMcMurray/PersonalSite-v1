@@ -1,28 +1,24 @@
 .p1 {
   color: lightsteelblue;
-  font-size: 28px;
   animation-delay: 200ms;
 }
 
 .p2 {
-  font-size: 50px;
   animation-delay: 400ms;
 }
 
 .p3 {
-  font-size: 50px;
-  animation-delay: 500ms;
+  animation-delay: 600ms;
 }
 
 .p4 {
   color: lightsteelblue;
-  font-size: 28px;
-  width: 60%;
-  animation-delay: 600ms;
+  animation-delay: 1.5s;
 }
 
 .container {
   background: rgb(0, 29, 58);
   padding-top: 70px;
   color: white;
+  height: 70vh;
 }

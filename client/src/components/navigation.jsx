@@ -3,19 +3,21 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import "../styles/navigation.css";
 
-class Navigation extends Component {
+export default class Navigation extends Component {
   state = {
     brand: "Spencer McMurray",
     pages: [
-      { key: 1, name: "About", url: "#about" },
-      { key: 2, name: "Projects", url: "#projects" },
-      { key: 3, name: "Links", url: "#links" }
+      { key: 1, name: "About", page: "/about" },
+      { key: 2, name: "Projects", page: "/projects" }
     ]
+  };
+  handleChangePage = page => {
+    console.log(page);
   };
   render() {
     const pages = this.state.pages.map(item => {
       return (
-        <Nav.Link key={item.key} href={item.url}>
+        <Nav.Link key={item.key} to={item.page}>
           {item.name}
         </Nav.Link>
       );
@@ -33,5 +35,3 @@ class Navigation extends Component {
     );
   }
 }
-
-export default Navigation;

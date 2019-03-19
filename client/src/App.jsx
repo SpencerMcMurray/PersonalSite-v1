@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import About from "./components/About";
+import Intro from "./components/Intro";
 
 class App extends Component {
+  state = {};
   render() {
     return (
-      <React.Fragment>
+      <Router>
         <Navigation />
-        <About />
-      </React.Fragment>
+
+        <Route exact path="/" component={Intro} />
+      </Router>
     );
   }
 }
