@@ -1,0 +1,29 @@
+img {
+  width: 200px;
+  height: 200px;
+  box-shadow: 5px 5px 3px rgb(0, 19, 37);
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+li {
+  color: lightsteelblue;
+  list-style: none;
+}
+
+li::before {
+  color: rgb(0, 88, 170);
+  content: "\25B7";
+  font-size: 1em;
+  padding-right: 1em;
+  position: relative;
+  top: 0em;
+}
+
+h5 {
+  color: lightsteelblue;
+}

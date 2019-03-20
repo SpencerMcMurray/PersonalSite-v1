@@ -20,8 +20,8 @@ export default class Intro extends Component {
           </div>
         </div>
         <div className="row align-items-start">
-          <h5 className="col p4 animated fadeIn w-60">
-            Explore my site to find more about what I do, and who I am.
+          <h5 className="col p4 animated fadeIn slow w-60">
+            Explore my site to find more about what I do & who I am.
           </h5>
         </div>
       </Container>

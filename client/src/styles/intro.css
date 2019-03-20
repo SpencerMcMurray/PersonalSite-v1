@@ -8,17 +8,10 @@
 }
 
 .p3 {
-  animation-delay: 600ms;
+  animation-delay: 800ms;
 }
 
 .p4 {
   color: lightsteelblue;
-  animation-delay: 1.5s;
-}
-
-.container {
-  background: rgb(0, 29, 58);
-  padding-top: 70px;
-  color: white;
-  height: 70vh;
+  animation-delay: 1.7s;
 }

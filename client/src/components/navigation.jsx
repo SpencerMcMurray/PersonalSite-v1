@@ -17,7 +17,7 @@ export default class Navigation extends Component {
   render() {
     const pages = this.state.pages.map(item => {
       return (
-        <Nav.Link key={item.key} to={item.page}>
+        <Nav.Link key={item.key} href={item.page}>
           {item.name}
         </Nav.Link>
       );
