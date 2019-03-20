@@ -10,3 +10,7 @@
 .links a i {
   color: lightsteelblue;
 }
+
+.links a i:hover {
+  color: white;
+}

@@ -19,7 +19,7 @@ export default class Intro extends Component {
   };
   render() {
     return (
-      <Container className="d-flex flex-wrap animated fadeIn slow">
+      <Container className="d-flex flex-wrap animated fadeIn slow overflow-auto">
         <div className="col py-4 row align-items-end w-100">
           <h2>About me</h2>
         </div>

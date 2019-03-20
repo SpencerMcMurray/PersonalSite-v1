@@ -8,7 +8,10 @@ export default class Intro extends Component {
         url: "https://github.com/SpencerMcMurray",
         icon: <i className="fab fa-github" />
       },
-
+      {
+        url: "mailto:spencermcmurray@hotmail.com",
+        icon: <i className="fas fa-envelope" />
+      },
       {
         url: "https://www.linkedin.com/in/spencer-mcmurray-859048174/",
         icon: <i className="fab fa-linkedin" />
@@ -25,9 +28,9 @@ export default class Intro extends Component {
   };
   render() {
     return (
-      <ul className="mt-auto pl-0 links justify-content-center animated fadeIn slow">
+      <ul className="pl-0 links justify-content-center animated fadeIn slow">
         {this.state.links.map((item, idx) => (
-          <a className="col" key={idx} href={item.url}>
+          <a className="px-2" key={idx} href={item.url}>
             {item.icon}
           </a>
         ))}
