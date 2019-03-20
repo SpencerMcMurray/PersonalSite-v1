@@ -5,6 +5,18 @@ import "../styles/about.css";
 import Me from "../images/me.jpg";
 
 export default class Intro extends Component {
+  state = {
+    tech: [
+      "Python",
+      "JavaScript",
+      "Flask",
+      "TensorFlow",
+      "OpenCV",
+      "MySQL",
+      "Node.js",
+      "React"
+    ]
+  };
   render() {
     return (
       <Container className="d-flex flex-wrap animated fadeIn slow">
@@ -24,14 +36,11 @@ export default class Intro extends Component {
               Here are some of my favourite technologies
             </h4>
             <ul className="pl-0 w-75 pb-4">
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>Flask</li>
-              <li>TensorFlow</li>
-              <li>OpenCV</li>
-              <li>MySQL</li>
-              <li>Node.js</li>
-              <li>React</li>
+              {this.state.tech.map((item, idx) => (
+                <li className="tech" key={idx}>
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="col d-flex col-6-md justify-content-center">

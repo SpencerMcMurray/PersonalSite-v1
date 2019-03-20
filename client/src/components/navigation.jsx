@@ -7,17 +7,17 @@ export default class Navigation extends Component {
   state = {
     brand: "Spencer McMurray",
     pages: [
-      { key: 1, name: "About", page: "/about" },
-      { key: 2, name: "Projects", page: "/projects" }
+      { name: "About", page: "/about" },
+      { name: "Projects", page: "/projects" }
     ]
   };
   handleChangePage = page => {
     console.log(page);
   };
   render() {
-    const pages = this.state.pages.map(item => {
+    const pages = this.state.pages.map((item, idx) => {
       return (
-        <Nav.Link key={item.key} href={item.page}>
+        <Nav.Link key={idx} href={item.page}>
           {item.name}
         </Nav.Link>
       );
