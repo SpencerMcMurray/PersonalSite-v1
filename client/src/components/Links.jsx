@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../styles/links.css";
 
+const BASE_DELAY = 2000;
+const DELAY_MULT = 200;
+
 export default class Intro extends Component {
   state = {
     links: [
@@ -28,12 +31,20 @@ export default class Intro extends Component {
   };
   render() {
     return (
-      <ul className="pl-0 links justify-content-center animated fadeIn slow">
-        {this.state.links.map((item, idx) => (
-          <a className="px-2" key={idx} href={item.url}>
-            {item.icon}
-          </a>
-        ))}
+      <ul className="pl-0 links justify-content-center">
+        {this.state.links.map((item, idx) => {
+          const delay = BASE_DELAY + DELAY_MULT * idx;
+          return (
+            <a
+              style={{ animationDelay: delay + "ms" }}
+              className="px-2 animated fadeIn"
+              key={idx}
+              href={item.url}
+            >
+              {item.icon}
+            </a>
+          );
+        })}
       </ul>
     );
   }

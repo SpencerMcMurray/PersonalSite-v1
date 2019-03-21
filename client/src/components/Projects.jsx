@@ -4,7 +4,9 @@ import CardColumns from "react-bootstrap/CardColumns";
 import Card from "react-bootstrap/Card";
 import "../styles/projects.css";
 
-const NUM_REPOS = 10;
+const NUM_REPOS = 9;
+const BASE_DELAY = 500;
+const DELAY_MULT = 200;
 
 export default class Projects extends Component {
   constructor() {
@@ -35,8 +37,13 @@ export default class Projects extends Component {
       topRepos.push(sortedRepos[i]);
     }
     return topRepos.map((item, idx) => {
+      const delay = BASE_DELAY + DELAY_MULT * idx;
       return (
-        <Card key={idx}>
+        <Card
+          className="animated fadeIn"
+          style={{ animationDelay: delay + "ms" }}
+          key={idx}
+        >
           <Card.Header>
             <h4>
               <a href={item.html_url}>{item.name}</a>
@@ -56,9 +63,11 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <Container className="d-flex flex-wrap animated fadeIn slow overflow-auto">
+      <Container className="d-flex flex-wrap overflow-auto">
         <div className="py-4 row align-items-end w-100">
-          <h3 className="col">Here are a few of my repositories from GitHub</h3>
+          <h3 className="project-header animated fadeIn slow col">
+            Here are a few of my repositories from GitHub
+          </h3>
         </div>
         <div className="row align-items-start">
           <CardColumns className="col">{this.makeCards()}</CardColumns>

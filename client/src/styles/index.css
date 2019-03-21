@@ -5,6 +5,7 @@ body {
 
 ::-webkit-scrollbar {
   visibility: hidden;
+  height: 0;
 }
 
 .container {
