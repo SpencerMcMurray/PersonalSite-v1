@@ -12,18 +12,16 @@ export default class Projects extends Component {
   constructor() {
     super();
     this.state = {
-      repos: []
+      repos: [],
+      error: ""
     };
   }
 
   componentDidMount() {
     fetch("/api/projects")
       .then(res => res.json())
-      .then(projects => {
-        const json = JSON.parse(projects);
-        this.setState({ repos: json });
-        console.log(json);
-      });
+      .then(projects => this.setState({ repos: JSON.parse(projects) }))
+      .catch(e => this.setState({ error: e.message }));
   }
 
   makeCards() {
@@ -36,29 +34,36 @@ export default class Projects extends Component {
     for (let i = 0; i < limit; i++) {
       topRepos.push(sortedRepos[i]);
     }
-    return topRepos.map((item, idx) => {
-      const delay = BASE_DELAY + DELAY_MULT * idx;
-      return (
-        <Card
-          className="animated fadeIn"
-          style={{ animationDelay: delay + "ms" }}
-          key={idx}
-        >
-          <Card.Header>
-            <h4>
-              <a href={item.html_url}>{item.name}</a>
-            </h4>
-          </Card.Header>
-          <Card.Body>
-            <Card.Subtitle className="mb-3">
-              <i className="fas fa-star" /> {item.stargazers_count}
-              <i className="fas fa-code-branch pl-2" /> {item.forks}
-            </Card.Subtitle>
-            <Card.Text>{item.description}</Card.Text>
-          </Card.Body>
-        </Card>
-      );
-    });
+    return topRepos.map((item, idx) => this.generateCard(item, idx));
+  }
+
+  generateCard(data, idx) {
+    const delay = BASE_DELAY + DELAY_MULT * idx;
+    return (
+      <Card
+        className="animated fadeIn col-4-lg"
+        style={{ animationDelay: delay + "ms" }}
+        key={idx}
+      >
+        <Card.Header>
+          <h4>
+            <a href={data.html_url}>{data.name}</a>
+          </h4>
+        </Card.Header>
+        <Card.Body>
+          <Card.Subtitle className="mb-3 row">
+            <div className="pl-3 col-1-sm">
+              <i className="fas fa-star" /> {data.stargazers_count}
+            </div>
+            <div className="col-1-sm">
+              <i className="fas fa-code-branch pl-2" /> {data.forks}
+            </div>
+            <div className="text-right col">{data.language}</div>
+          </Card.Subtitle>
+          <Card.Text>{data.description}</Card.Text>
+        </Card.Body>
+      </Card>
+    );
   }
 
   render() {
@@ -71,6 +76,7 @@ export default class Projects extends Component {
         </div>
         <div className="row align-items-start">
           <CardColumns className="col">{this.makeCards()}</CardColumns>
+          {this.state.error}
         </div>
       </Container>
     );
