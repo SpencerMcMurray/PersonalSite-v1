@@ -23,9 +23,11 @@ export default class Intro extends Component {
   };
   render() {
     return (
-      <Container className="d-flex flex-wrap overflow-auto">
+      <Container
+        className="d-flex h-auto flex-wrap overflow-auto"
+        style={{ paddingTop: "30vh", paddingBottom: "30vh" }}
+      >
         <ScrollAnimation
-          offset={0}
           animateIn="fadeIn slow"
           className="col py-4 row align-items-end w-100"
         >
@@ -33,7 +35,7 @@ export default class Intro extends Component {
         </ScrollAnimation>
         <div className="row flex-wrap">
           <div className="col col-6-md align-items-start w-50">
-            <ScrollAnimation offset={0} animateIn="fadeIn slow">
+            <ScrollAnimation animateIn="fadeIn slow">
               <p>
                 Hi again, I'm a Computer Science student at the University of
                 Toronto and I love building things that make life easier. I tend
@@ -49,21 +51,19 @@ export default class Intro extends Component {
               {this.state.tech.map((item, idx) => {
                 const delay = BASE_DELAY + DELAY_MULT * idx;
                 return (
-                  <ScrollAnimation
-                    offset={0}
-                    key={idx}
-                    delay={delay}
-                    animateIn="fadeIn"
-                  >
+                  <ScrollAnimation key={idx} delay={delay} animateIn="fadeIn">
                     <li className="tech">{item}</li>
                   </ScrollAnimation>
                 );
               })}
             </ul>
           </div>
-          <div className="animated fadeIn slow col d-flex col-6-md justify-content-center">
+          <ScrollAnimation
+            animateIn="fadeIn slow"
+            className="col d-flex col-6-md justify-content-center"
+          >
             <Image rounded src={Me} alt="Me" />
-          </div>
+          </ScrollAnimation>
         </div>
       </Container>
     );

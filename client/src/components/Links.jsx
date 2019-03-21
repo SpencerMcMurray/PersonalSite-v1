@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import "../styles/links.css";
+import Container from "react-bootstrap/Container";
 
-const BASE_DELAY = 2000;
+const BASE_DELAY = 200;
 const DELAY_MULT = 200;
 
 export default class Intro extends Component {
@@ -31,21 +33,18 @@ export default class Intro extends Component {
   };
   render() {
     return (
-      <ul className="pl-0 links justify-content-center">
+      <Container className="h-auto mx-auto row links justify-content-center">
         {this.state.links.map((item, idx) => {
           const delay = BASE_DELAY + DELAY_MULT * idx;
           return (
-            <a
-              style={{ animationDelay: delay + "ms" }}
-              className="px-2 animated fadeIn"
-              key={idx}
-              href={item.url}
-            >
-              {item.icon}
+            <a className="px-2 col-2-md" key={idx} href={item.url}>
+              <ScrollAnimation offset={0} delay={delay} animateIn="fadeInRight">
+                {item.icon}
+              </ScrollAnimation>
             </a>
           );
         })}
-      </ul>
+      </Container>
     );
   }
 }

@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import "../styles/projects.css";
 
 const NUM_REPOS = 9;
-const BASE_DELAY = 500;
+const BASE_DELAY = 0;
 const DELAY_MULT = 200;
 
 export default class Projects extends Component {
@@ -73,9 +73,12 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <Container className="d-flex flex-wrap overflow-auto">
+      <Container
+        className="d-flex h-auto flex-wrap overflow-auto"
+        style={{ paddingTop: "30vh", paddingBottom: "20vh" }}
+      >
         <div className="py-4 row align-items-end w-100">
-          <ScrollAnimation offset={0} animateIn="fadeIn slow" className="col">
+          <ScrollAnimation animateIn="fadeIn slow" className="col">
             <h3>Here are a few of my repositories from GitHub</h3>
           </ScrollAnimation>
         </div>

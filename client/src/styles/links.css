@@ -1,15 +1,12 @@
 .links {
   font-size: 48px;
   text-align: center;
-  width: 100%;
-  list-style-type: none;
-  bottom: 0;
 }
 
-.links a i {
+.links i {
   color: lightsteelblue;
 }
 
-.links a i:hover {
+.links i:hover {
   color: white;
 }

@@ -21,7 +21,7 @@ export default class Navigation extends Component {
       );
     });
     return (
-      <div id="header">
+      <div id="header" style={{ marginBottom: "50px" }}>
         <Navbar variant="dark" expand="lg" fixed="top">
           <Navbar.Brand href="/">{this.state.brand}</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
