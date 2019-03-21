@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import Container from "react-bootstrap/Container";
 import CardColumns from "react-bootstrap/CardColumns";
 import Card from "react-bootstrap/Card";
@@ -40,29 +41,33 @@ export default class Projects extends Component {
   generateCard(data, idx) {
     const delay = BASE_DELAY + DELAY_MULT * idx;
     return (
-      <Card
-        className="animated fadeIn col-4-lg"
-        style={{ animationDelay: delay + "ms" }}
+      <ScrollAnimation
+        offset={0}
         key={idx}
+        delay={delay}
+        animateIn="fadeIn"
+        className="col-4-lg"
       >
-        <Card.Header>
-          <h4>
-            <a href={data.html_url}>{data.name}</a>
-          </h4>
-        </Card.Header>
-        <Card.Body>
-          <Card.Subtitle className="mb-3 row">
-            <div className="pl-3 col-1-sm">
-              <i className="fas fa-star" /> {data.stargazers_count}
-            </div>
-            <div className="col-1-sm">
-              <i className="fas fa-code-branch pl-2" /> {data.forks}
-            </div>
-            <div className="text-right col">{data.language}</div>
-          </Card.Subtitle>
-          <Card.Text>{data.description}</Card.Text>
-        </Card.Body>
-      </Card>
+        <Card>
+          <Card.Header>
+            <h4>
+              <a href={data.html_url}>{data.name}</a>
+            </h4>
+          </Card.Header>
+          <Card.Body>
+            <Card.Subtitle className="mb-3 row">
+              <div className="pl-3 col-1-sm">
+                <i className="fas fa-star" /> {data.stargazers_count}
+              </div>
+              <div className="col-1-sm">
+                <i className="fas fa-code-branch pl-2" /> {data.forks}
+              </div>
+              <div className="text-right col">{data.language}</div>
+            </Card.Subtitle>
+            <Card.Text>{data.description}</Card.Text>
+          </Card.Body>
+        </Card>
+      </ScrollAnimation>
     );
   }
 
@@ -70,9 +75,9 @@ export default class Projects extends Component {
     return (
       <Container className="d-flex flex-wrap overflow-auto">
         <div className="py-4 row align-items-end w-100">
-          <h3 className="project-header animated fadeIn slow col">
-            Here are a few of my repositories from GitHub
-          </h3>
+          <ScrollAnimation offset={0} animateIn="fadeIn slow" className="col">
+            <h3>Here are a few of my repositories from GitHub</h3>
+          </ScrollAnimation>
         </div>
         <div className="row align-items-start">
           <CardColumns className="col">{this.makeCards()}</CardColumns>

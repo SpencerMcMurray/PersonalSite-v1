@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import ScrollableAnchor from "react-scrollable-anchor";
 import Navigation from "./components/Navigation";
 import Intro from "./components/Intro";
 import About from "./components/About";
@@ -9,14 +9,19 @@ import Links from "./components/Links";
 export default class App extends Component {
   render() {
     return (
-      <Router>
+      <React.Fragment>
         <Navigation />
-
-        <Route exact path="/" component={Intro} />
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
+        <ScrollableAnchor id={"intro"}>
+          <Intro />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"about"}>
+          <About />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"projects"}>
+          <Projects />
+        </ScrollableAnchor>
         <Links />
-      </Router>
+      </React.Fragment>
     );
   }
 }

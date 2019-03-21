@@ -7,8 +7,9 @@ export default class Navigation extends Component {
   state = {
     brand: "Spencer McMurray",
     pages: [
-      { name: "About", page: "/about" },
-      { name: "Projects", page: "/projects" }
+      { name: "Intro", page: "#intro" },
+      { name: "About", page: "#about" },
+      { name: "Projects", page: "#projects" }
     ]
   };
   render() {
