@@ -3,6 +3,10 @@ body {
   background: rgb(0, 29, 58);
 }
 
+::-webkit-scrollbar {
+  visibility: hidden;
+}
+
 .container {
   padding-top: 70px;
   color: white;

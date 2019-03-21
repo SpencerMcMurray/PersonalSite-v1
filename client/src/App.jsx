@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Intro from "./components/Intro";
 import About from "./components/About";
+import Projects from "./components/Projects";
 import Links from "./components/Links";
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <Router>
@@ -13,10 +14,9 @@ class App extends Component {
 
         <Route exact path="/" component={Intro} />
         <Route path="/about" component={About} />
+        <Route path="/projects" component={Projects} />
         <Links />
       </Router>
     );
   }
 }
-
-export default App;

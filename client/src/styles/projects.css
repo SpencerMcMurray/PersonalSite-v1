@@ -1,0 +1,21 @@
+.card {
+  background: rgb(0, 88, 170);
+  color: lightsteelblue;
+  height: 12rem;
+}
+
+.animated {
+  animation-delay: 500ms;
+}
+
+i {
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: lightsteelblue;
+}

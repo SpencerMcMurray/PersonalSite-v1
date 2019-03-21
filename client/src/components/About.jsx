@@ -12,7 +12,7 @@ export default class Intro extends Component {
       "Flask",
       "TensorFlow",
       "OpenCV",
-      "MySQL",
+      "Firebase",
       "Node.js",
       "React"
     ]

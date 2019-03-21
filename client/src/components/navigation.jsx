@@ -11,9 +11,6 @@ export default class Navigation extends Component {
       { name: "Projects", page: "/projects" }
     ]
   };
-  handleChangePage = page => {
-    console.log(page);
-  };
   render() {
     const pages = this.state.pages.map((item, idx) => {
       return (
