@@ -9,6 +9,8 @@ const NUM_REPOS = 9;
 const BASE_DELAY = 0;
 const DELAY_MULT = 200;
 
+const endpoint = "https://api.github.com/users/spencermcmurray/repos";
+
 export default class Projects extends Component {
   constructor() {
     super();
@@ -19,9 +21,9 @@ export default class Projects extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/projects")
+    fetch(endpoint)
       .then(res => res.json())
-      .then(projects => this.setState({ repos: JSON.parse(projects) }))
+      .then(projects => this.setState({ repos: projects }))
       .catch(e => this.setState({ error: e.message }));
   }
 
@@ -75,17 +77,30 @@ export default class Projects extends Component {
     return (
       <Container
         className="d-flex h-auto flex-wrap overflow-auto"
-        style={{ paddingTop: "30vh", paddingBottom: "20vh" }}
+        style={{ paddingTop: "30vh", paddingBottom: "30vh" }}
       >
         <div className="py-4 row align-items-end w-100">
           <ScrollAnimation animateIn="fadeIn slow" className="col">
-            <h3>Here are a few of my repositories from GitHub</h3>
+            <h3>Here are a few repositories from my GitHub</h3>
           </ScrollAnimation>
         </div>
         <div className="row align-items-start">
           <CardColumns className="col">{this.makeCards()}</CardColumns>
           {this.state.error}
         </div>
+        <ScrollAnimation
+          delay={1000}
+          animateIn="fadeIn slow"
+          className="mx-auto my-4"
+        >
+          <a
+            className="btn btn-primary"
+            style={{ background: "rgb(0, 88, 170)" }}
+            href="https://github.com/SpencerMcMurray"
+          >
+            (git) Checkout more!
+          </a>
+        </ScrollAnimation>
       </Container>
     );
   }

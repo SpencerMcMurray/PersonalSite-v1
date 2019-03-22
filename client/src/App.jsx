@@ -20,7 +20,9 @@ export default class App extends Component {
         <ScrollableAnchor id={"projects"}>
           <Projects />
         </ScrollableAnchor>
-        <Links />
+        <ScrollableAnchor id={"contacts"}>
+          <Links />
+        </ScrollableAnchor>
       </React.Fragment>
     );
   }

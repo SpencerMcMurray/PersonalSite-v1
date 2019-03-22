@@ -9,7 +9,8 @@ export default class Navigation extends Component {
     pages: [
       { name: "Intro", page: "#intro" },
       { name: "About", page: "#about" },
-      { name: "Projects", page: "#projects" }
+      { name: "Projects", page: "#projects" },
+      { name: "Contacts", page: "#contacts" }
     ]
   };
   render() {
