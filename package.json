@@ -1,18 +1,22 @@
 {
-  "name": "reactexpress",
+  "name": "Personal-Website",
   "version": "1.0.0",
-  "description": "Starter kit for creating React and Express apps",
+  "description": "My personal site for displaying my projects",
   "main": "server.js",
+  "homepage": "http://spencermcmurray.github.io/personal-website",
   "scripts": {
     "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "predeploy": "cd client && npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "author": "Brad Traversy",
+  "author": "Spencer McMurray",
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "nodemon": "^1.14.6"
   },
   "dependencies": {
