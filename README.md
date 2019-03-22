@@ -1,8 +1,6 @@
-# Personal-Website
+# [Personal Website](https://spencermcmurray.github.io/Personal-Website/)
 
 My personal site detailing my projects and strengths.
-
-Hosted [here](https://spencermcmurray.github.io/Personal-Website/)
 
 Built with Node, Express, and React (hosted version is just React, so it works with GitHub Pages).
 
