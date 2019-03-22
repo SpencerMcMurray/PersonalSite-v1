@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "description": "My personal site for displaying my projects",
   "main": "server.js",
-  "homepage": "http://spencermcmurray.github.io/personal-website",
   "scripts": {
     "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "predeploy": "cd client && npm run build",
-    "deploy": "cd client && gh-pages -d build"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Spencer McMurray",
   "license": "MIT",

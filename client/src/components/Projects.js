@@ -77,7 +77,7 @@ export default class Projects extends Component {
     return (
       <Container
         className="d-flex h-auto flex-wrap overflow-auto"
-        style={{ paddingTop: "30vh", paddingBottom: "30vh" }}
+        style={{ paddingTop: "30vh", paddingBottom: "25vh" }}
       >
         <div className="py-4 row align-items-end w-100">
           <ScrollAnimation animateIn="fadeIn slow" className="col">
