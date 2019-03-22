@@ -11,7 +11,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "predeploy": "cd client && npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "cd client && gh-pages -d build"
   },
   "author": "Spencer McMurray",
   "license": "MIT",
