@@ -1,8 +1,8 @@
-# Personal-Website
+# [Personal Website](https://spencermcmurray.github.io/Personal-Website/)
 
-My personal site detailing my projects and strengths. Still in development...
+My personal site detailing my projects and strengths.
 
-Built with Node, Express, and React
+Built with Node, Express, and React (hosted version is just React, so it works with GitHub Pages).
 
 ## Get Started
 * Install Node.js
