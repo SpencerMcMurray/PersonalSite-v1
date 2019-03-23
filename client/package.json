@@ -2,7 +2,7 @@
   "name": "Personal-Website",
   "version": "1.0.0",
   "description": "My personal site for displaying my projects",
-  "homepage": "https://SpencerMcMurray.github.io/Personal-Website/",
+  "homepage": "https://spencermcmurray.com",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

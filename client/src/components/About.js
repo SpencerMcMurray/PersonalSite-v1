@@ -25,7 +25,7 @@ export default class Intro extends Component {
     return (
       <Container
         className="d-flex h-auto flex-wrap overflow-auto"
-        style={{ paddingTop: "30vh", paddingBottom: "20vh" }}
+        style={{ paddingTop: "29vh", paddingBottom: "10vh" }}
       >
         <ScrollAnimation
           animateIn="fadeIn slow"
