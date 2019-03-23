@@ -1,4 +1,4 @@
-# [Personal Website](https://spencermcmurray.github.io/Personal-Website/)
+# [Personal Website](https://spencermcmurray.com/)
 
 My personal site detailing my projects and strengths.
 
