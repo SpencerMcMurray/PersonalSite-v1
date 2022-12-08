@@ -20,7 +20,7 @@
     "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",
     "concurrently": "^3.5.1",
-    "express": "^4.16.2",
+    "express": "^4.18.2",
     "react-animate-on-scroll": "^2.1.5",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-router-dom": "^5.0.0",
